@@ -45,7 +45,6 @@ body {
     z-index: 1;
     position: relative;
     height: 4.5vw;
-    /* Ensure consistent height for smooth transitions */
     overflow: hidden;
     /* Hide out-of-bounds text during animation */
     display: flex;
@@ -280,8 +279,9 @@ body {
 
 
 
+
 /* Projects Section */
-.portfolio h2{
+.portfolio h2 {
     margin: 40px 0;
     text-align: center;
     font-size: 3.5rem;
@@ -299,39 +299,25 @@ body {
 
 .project-x {
     background-size: cover;
+    background-position: center;
     width: 400px;
     height: 300px;
     border-radius: 5%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
     margin: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-x:hover {
+    transform: scale(1.05);
+    /* Slight zoom on hover for a better effect */
 }
 
 .project1 {
     background-image: url('./assets/portfolio/scaled.jpg');
 }
-
-.overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    align-items: center;
-    text-align: center;
-    transition: opacity 0.5s;
-    font-size: 1.3rem;
-    filter: brightness(1.4);
-}
-
-.proj_icon{
-    display:flex;
-    justify-content: center;
-    gap: 100px;
-    margin-top: 40px;
-}
-
 
 .project2 {
     background-image: url('./assets/portfolio/zz-fotor-20240311132651.png');
@@ -343,4 +329,181 @@ body {
 
 .project4 {
     background-image: url('./assets/portfolio/leetcode.png');
+}
+
+/* Overlay Styling */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1;
+}
+
+.project-x:hover .overlay {
+    opacity: 1;
+    /* Make the overlay visible on hover */
+}
+
+/* Ensure images are clearly visible when not hovered */
+.project-x {
+    filter: brightness(1.2);
+}
+
+.project-x:hover {
+    filter: brightness(0.8);
+    /* Dim the image slightly to highlight the overlay */
+}
+
+/* Project Icons */
+.proj_icon {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.proj_icon a i {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.proj_icon a:hover i {
+    transform: scale(1.2);
+    /* Slight enlargement for icons on hover */
+    color: bisque;
+    /* Change icon color on hover */
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-x {
+        width: 90%;
+    }
+
+    .project-x:hover {
+        transform: none;
+    }
+
+    .proj_icon {
+        margin-top: 10px;
+    }
+
+    .proj_icon a i {
+        font-size: 1.2rem;
+    }
+}
+
+/* Medium devices (tablets, 600px to 768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+    .project-x {
+        width: 45%;
+    }
+
+    .proj_icon a i {
+        font-size: 1.3rem;
+    }
+}
+
+/* Large devices (desktops, 769px and up) */
+@media (min-width: 769px) {
+    .project-x {
+        width: 30%;
+    }
+
+    .proj_icon a i {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+/* Contact Section */
+.contact {
+    background: linear-gradient(to right, #111111, #000);
+    color: #c9d1d9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 3.1rem;
+    font-weight: bold;
+    color: bisque;
+    margin-bottom: 40px;
+}
+
+/* .contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+} */
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5rem;
+}
+
+.contact-item i {
+    font-size: 1.7rem;
+    color: bisque;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-item span,
+.contact-item a {
+    text-decoration: none;
+    color: #c9d1d9;
+}
+
+.contact-item a:hover {
+    color: bisque;
+    /* Hover color matches icons and heading */
+}
+
+.contact-item i:hover {
+    transform: scale(1.2);
+    color: #f4a261;
+    /* Slightly lighter hover effect */
+}
+
+/* Footer */
+footer {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 1rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: bisque;
+}
+
+footer p:hover {
+    color: #f4a261;
+    /* Hover effect for footer text */
 }
