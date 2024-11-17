@@ -1,0 +1,346 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    color: #FDFEFF;
+    background-color: #000;
+
+}
+
+.first-part {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: url('./assets/images/bg.avif') no-repeat center center;
+    background-size: cover;
+    height: 90vh;
+    padding: 0 16px;
+}
+
+.first-part::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: black;
+    opacity: 0.65;
+    z-index: 0;
+}
+
+.name {
+    font-size: 5vw;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1;
+}
+
+.cd-headline {
+    font-size: 30px;
+    font-weight: bold;
+    z-index: 1;
+    position: relative;
+    height: 4.5vw;
+    /* Ensure consistent height for smooth transitions */
+    overflow: hidden;
+    /* Hide out-of-bounds text during animation */
+    display: flex;
+    justify-content: center;
+}
+
+.cd-headline b {
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+    animation: skill-cycle 12s infinite;
+    /* 4s per text */
+}
+
+.cd-headline b:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.cd-headline b:nth-child(2) {
+    animation-delay: 4s;
+}
+
+.cd-headline b:nth-child(3) {
+    animation-delay: 8s;
+}
+
+/* Keyframes for Text Animation */
+@keyframes skill-cycle {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    40% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+.contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    z-index: 1;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+}
+
+.icon {
+    font-size: 1.5rem;
+}
+
+.contact-link {
+    text-decoration: none;
+    color: #FDFEFF;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.contact-link {
+    text-decoration: none;
+    color: #FDFEFF;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    .cd-headline b {
+        font-size: 24px;
+    }
+    .cd-headline {
+        height: 5vh;
+    }
+
+    .name {
+        font-size: 8vw;
+    }
+
+    .contact-link {
+        /* flex-direction: column; */
+        gap: 4px;
+    }
+
+    .contact-text {
+        font-size: 12px;
+    }
+    .contact-details{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .first-part {
+        height: 65vh;
+    }
+}
+
+@media (max-width: 420px) {
+    .name {
+        font-size: 10vw;
+    }
+
+    .contact-text {
+        font-size: 20px;
+    }
+}
+
+/* Medium devices (tablets, 600px to 768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+
+    /* .contact-link {
+        gap: 6px;
+    } */
+
+    .contact-text {
+        font-size: 14px;
+    }
+}
+
+/* Large devices (desktops, 769px and up) */
+@media (min-width: 769px) {
+    
+    .contact-link {
+        gap: 8px;
+    }
+
+    .contact-text {
+        font-size: 16px;
+    }
+}
+
+
+
+/* personal bio section */
+.profile-part{
+    background: linear-gradient(to right, #1e1e1e, #000);
+    color: white;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-image img {
+    width: 100%;
+    border-radius: 8%;
+    padding: 22px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.profile-description{
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    line-height: 30px;
+}
+
+.profile-description .about-me {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 32px;
+    color:bisque;
+}
+
+.passionate_text {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.profile-description p {
+    font-size: 1.4rem;
+    color: #dcddde;
+}
+
+@media (min-width: 768px) {
+    .profile-part {
+        display: flex;
+    }
+
+    .profile-image {
+        width: 35%;
+    }
+
+    .profile-description {
+        width: 45%;
+        margin: 25px 0 0 25px;
+    }
+
+    .profile-description .about-me {
+        font-size: 3.6rem;
+    }
+
+}
+
+
+
+/* Projects Section */
+.portfolio h2{
+    margin: 40px 0;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: bisque;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.project-x {
+    background-size: cover;
+    width: 400px;
+    height: 300px;
+    border-radius: 5%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    margin: 20px;
+}
+
+.project1 {
+    background-image: url('./assets/portfolio/scaled.jpg');
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.5s;
+    font-size: 1.3rem;
+    filter: brightness(1.4);
+}
+
+.proj_icon{
+    display:flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 40px;
+}
+
+
+.project2 {
+    background-image: url('./assets/portfolio/zz-fotor-20240311132651.png');
+}
+
+.project3 {
+    background-image: url('./assets/portfolio/netl.jpg');
+}
+
+.project4 {
+    background-image: url('./assets/portfolio/leetcode.png');
+}
