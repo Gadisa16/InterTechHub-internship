@@ -1,48 +1,34 @@
-# Portfolio Website
+# Simple Portfolio
 
-Welcome to my portfolio! This project showcases my skills, experiences, and projects as a **Full-Stack Developer**. It is designed to highlight my expertise in front-end and back-end technologies with an elegant, responsive design.
+This is a simple portfolio website showcasing my projects, skills, and contact information. The website is designed with a modern aesthetic and responsive layout for an optimal user experience.
 
----
+## Deployment
+
+The portfolio is continuously deployed to [Netlify](https://www.netlify.com/) using CI/CD pipelines. Any changes pushed to the GitHub repository are automatically built and deployed by Netlify.
+
+You can view the live version here: [My Portfolio](https://simple-portfolio2.netlify.app/)
 
 ## Features
 
-### Overview
-- A visually appealing, fully responsive website.
-- Showcases key projects with descriptions, live demos, and GitHub repository links.
-- Includes essential contact information for networking and collaboration.
+- **Responsive Design**: Fully optimized for different screen sizes, including mobile, tablet, and desktop.
+- **Projects Showcase**: Includes details about notable projects with links to live demos and GitHub repositories.
+- **Contact Information**: Provides multiple ways to reach out, including email, LinkedIn, and phone number.
 
-### Sections
-1. **Hero Section**
-   - Engaging introduction to my profile with a professional summary.
+## Tech Stack
 
-2. **Projects Section**
-   - **Amazon Clone**  
-     - A full-stack eCommerce application with user authentication and Stripe payment integration.
-     - Technologies: React.js, CSS, Node.js, Express, Firebase Authentication, Firebase Database, Stripe Payment Gateway.
-   - **Evangadi Forum**  
-     - A full-stack app for Q&A forums, built with modern web technologies.
-     - Technologies: React.js, Bootstrap, Node.js, Express, MySQL.
-   - **Netflix Clone**  
-     - A clone of Netflix, integrated with The Movie Database (TMDb) API to fetch movie details dynamically.
-     - Technologies: React.js, CSS, Movie Database API.
-   - **Leetcode Profile**  
-     - Collection of competitive programming solutions, primarily in Python, hosted on GitHub and linked to my LeetCode profile.
+- **HTML5**
+- **CSS3**
 
-3. **Contact Section**
-   - Displays contact details, including phone number, email, and LinkedIn profile with respective icons.
+## CI/CD Workflow
 
-4. **Footer**
-   - Simple and clean footer with copyright information.
+This portfolio leverages Netlify’s continuous deployment feature:
+1. Code changes are pushed to the GitHub repository.
+2. Netlify automatically detects changes and starts the build process.
+3. The new build is deployed to production within seconds.
 
----
+## Getting Started
 
-## Technologies Used
-- **Frontend**: HTML5, CSS3
-- **Tools**: GitHub, Netlify.
-
----
-
-## How to Access
-1. Clone this repository:
+If you'd like to explore the code or modify it:
+1. Clone the repository:
    ```bash
    git clone https://github.com/Gadisa16/InterTechHub-internship/tree/master/stage-1/simple-portfolio
